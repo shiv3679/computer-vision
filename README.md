@@ -25,7 +25,7 @@ possible solution for this problem using PCA, SVD, LDA or t-SNE
 We take the help of Linear Algebra to help us solve this problem (Principle Component Analysis
 (PCA) to be specific).
 
-### 2.1 Getting the Data:
+###  Getting the Data:
 
 We downloaded our face-dataset from https://cam-orl.co.uk/facedatabase.html (formerly ’The
 ORL Database of Faces’). There are ten different images of each of 40 distinct subjects. For
@@ -70,12 +70,7 @@ produces a data set whose mean is zero.
 
 We know that
 
-```
-$C^{n \times n} = (C_{i,j},C_{j,i} = cov(Dim_i,Dim_j))$ 
-```
-```
-Cov(X) = XX^T
-```
+![image](https://user-images.githubusercontent.com/66754219/221323600-f99923cd-d9d4-4bdf-ab57-722c4650064e.png)
 
 
 We calculate the covariance matrix to get to know about how much is the overlap of all the images
@@ -89,9 +84,9 @@ basis set where all the axes are orthogonal to each other and there is no depend
 and I see that only a small proportion of eigenvectors hold a significant amount of variance and all
 others are pretty insignificant.
 
-```
+
+
 ![image](https://user-images.githubusercontent.com/66754219/221322238-295b9d99-38c9-47e7-8915-40659e556102.png)
-```
 
 
 ####  Deriving the new data set
@@ -103,9 +98,9 @@ What will this give us? It will give us the original data solely in terms of the
 If these axes are perpendicular, then the expression is the most efficient. This was why it was
 important that eigenvectors are always perpendicular to each other.
 
-```
+
 ![image](https://user-images.githubusercontent.com/66754219/221322433-f17e790f-7d66-47b3-b349-68f05d9bac8b.png)
-```
+
 
 As we can see that the re-constructed faces are not 100% similar because we have used only a
 certain fraction of information from them to re-construct the data, but we can clearly recognize the
@@ -118,9 +113,9 @@ Now, we put a related image into our code and see whether it can match to it’s
 or not.
 For matching we use theEuclidean Distance Algorithmto choose the closest match.
 
-```
+
 ![image](https://user-images.githubusercontent.com/66754219/221322549-3f2dab2f-3690-48de-ba43-e5fb31417094.png)
-```
+
 
 Here, we see that although this method works alright in most of the cases, but this method of
 euclidean distance will at times give an incorrect match as can be seen in the image above. Hence,
@@ -135,10 +130,10 @@ It is an Object Detection Algorithm used to identify faces in an image or a real
 algorithm uses edge or line detection features proposed by Viola and Jones in their research paper
 “Rapid Object Detection using a Boosted Cascade of Simple Features” published in 2001.
 
-```
+
 ![image](https://user-images.githubusercontent.com/66754219/221322625-10967f53-af7f-4fa3-9889-12eaf1e451f1.png)
 
-```
+
 
 Haar Cascade Detection is one of the oldest yet powerful face detection algorithms invented. It has
 been there since long, long before Deep Learning became famous. Haar Features were not only used
