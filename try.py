@@ -14,6 +14,25 @@ Group Members: Erdinc Eren
 
 # Function to check if the given year is a leap year
 def leap_year(year):
+    """
+    Determine if a given year is a leap year.
+
+    A year is a leap year if:
+    - It is divisible by 4 but not by 100, or
+    - It is divisible by 400.
+
+    Parameters:
+        year (int): The year to check.
+
+    Returns:
+        boolean: True if the year is a leap year, False otherwise.
+
+    Example:
+        >>> leap_year(2000)
+        True
+        >>> leap_year(1900)
+        False
+    """
     # A year is a leap year if it is divisible 4 but not by 100, except if it is also divisible by 400.
     if (year % 4 == 0 and year % 100 != 0) or (year % 400 == 0):
         return True
@@ -22,6 +41,24 @@ def leap_year(year):
 
 # Function to return the maximum days in a month, accounting for leap years
 def mon_max(year, month):
+    """
+    Get the maximum number of days in a given month of a specific year.
+
+    For February, this function accounts for leap years.
+
+    Parameters:
+        year (int): The year to check (for leap year calculation).
+        month (int): The month to get the maximum days (1 = January, ..., 12 = December).
+
+    Returns:
+        int: The maximum number of days in the specified month.
+
+    Example:
+        >>> mon_max(2003, 2)
+        28
+        >>> mon_max(2000, 2)
+        29
+    """
     # Define days in each month, with index 0 ignored for direct month indexing (1 = January, etc.) 
     days_in_month = [0, 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]
     
@@ -48,6 +85,8 @@ def after(date):
         if month > 12:
             month = 1  # Reset month to January
             year += 1  # Increment the year
+    # Format and return the next date as 'YYYY-MM-DD'
+    return f"{year:04d}-{month:02d}-{day:02d}"
 
 # Function to validate a date and ensure it's within a specified range and format (DD/MM/YYYY)
 def valid_date(date):
