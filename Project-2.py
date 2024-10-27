@@ -29,12 +29,12 @@ plt.show()
 
 # Getting the dimensions of the image used in the project
 faceshape = list(faces.values())[0].shape
-print("Face image shape:", faceshape)
+print("body image shape:", faceshape)
 
 #Retrieving different classes and adding that to the classes and faces lists
 classes = set(filename.split("/")[0] for filename in faces.keys())
 print("Number of classes:", len(classes))
-print("Number of images:", len(faces))
+print("Number of points:", len(faces))
 
 # Take classes 1-39 for eigenfaces, keep entire class 40 and
 # image 10 of class 39 as out-of-sample test

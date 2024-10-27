@@ -28,7 +28,7 @@ faces = faceCascade.detectMultiScale(
 )
 
 
-print("Found {0} faces!".format(len(faces)))
+print("Found {0} points!".format(len(faces)))
 
 
 
